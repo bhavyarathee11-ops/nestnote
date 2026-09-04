@@ -1,18 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone', // Add this line
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**.supabase.co',
-      },
-    ],
+    domains: ['localhost', '*.supabase.co'],
   },
-  // This allows you to upload files without hitting body size limits
-  experimental: {
-    serverActions: {
-      bodySizeLimit: '10mb',
-    },
+  typescript: {
+    ignoreBuildErrors: false,
   },
 }
 
